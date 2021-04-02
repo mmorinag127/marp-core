@@ -1,5 +1,10 @@
 import { Marpit, Options, ThemeSetPackOptions } from '@marp-team/marpit'
 import highlightjs from 'highlight.js'
+import markdownItContainer from 'markdown-it-container'
+import markdownItDiv from 'markdown-it-div'
+import markdownItFootnote from 'markdown-it-footnote'
+import markdownItIns from 'markdown-it-ins'
+import markdownItMark from 'markdown-it-mark'
 import postcss from 'postcss'
 import postcssMinifyParams from 'postcss-minify-params'
 import postcssMinifySelectors from 'postcss-minify-selectors'
@@ -87,6 +92,11 @@ export class Marp extends Marpit {
       .use(fittingPlugin.markdown)
       .use(sizePlugin.markdown)
       .use(scriptPlugin.markdown)
+      .use(markdownItContainer)
+      .use(markdownItDiv)
+      .use(markdownItFootnote)
+      .use(markdownItIns)
+      .use(markdownItMark)
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
